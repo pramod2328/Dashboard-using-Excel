@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crocodile Facts Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e2e2e2;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #fact-display {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: white;
+            min-height: 50px; /* Ensures space for the fact display */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            margin: 5px; /* Adds space between buttons */
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Crocodile Facts</h1>
+    <div id="fact-display">Click the button to see a crocodile fact!</div>
+    <button id="generate-fact">Generate Another Fact</button>
+    <button id="replace-facts">Replace Facts</button>
+    
+    <script>
+        const facts = [
+            "Crocodiles have existed for over 200 million years, making them one of the oldest living species on Earth.",
+            "Crocodiles are ectothermic (cold-blooded), meaning they rely on external sources to regulate their body temperature.",
+            "They have one of the strongest bites in the animal kingdom, with a bite force of over 3,700 pounds per square inch.",
+            "Crocodiles can swim at speeds of up to 20 miles per hour in short bursts, thanks to their powerful tails.",
+            "Their eyes have a special membrane that allows them to see clearly underwater while keeping their eyes protected.",
+            "Crocodiles communicate through a variety of vocalizations, including hissing, growling, and even bellowing.",
+            "Unlike many reptiles, female crocodiles exhibit parental care, guarding their nests and helping hatchlings reach the water.",
+            "They are carnivorous and primarily feed on fish, birds, and mammals, but they can also consume fruit on occasion.",
+            "Crocodiles are found in tropical and subtropical regions around the world, inhabiting rivers, lakes, and wetlands.",
+            "In the wild, crocodiles can live for 70 to 100 years, with some individuals in captivity living even longer."
+        ];
+
+        const newFacts = [
+            "Crocodiles can hold their breath underwater for up to two hours.",
+            "They have a unique way of swimming, using their tails to propel themselves.",
+            "Crocodiles can run on land at speeds of up to 11 miles per hour.",
+            "Their skin is covered in tough, scaly armor that protects them from predators.",
+            "Crocodiles can detect vibrations in the water, helping them locate prey.",
+            "They have a specialized heart that allows them to dive underwater for extended periods.",
+            "Crocodiles can open their mouths wide enough to swallow large prey whole.",
+            "They are known to bask in the sun to regulate their body temperature.",
+            "Crocodiles can live in both freshwater and saltwater environments.",
+            "They have a keen sense of hearing and can hear low-frequency sounds."
+        ];
+
+        document.getElementById('generate-fact').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact-display').innerText = facts[randomIndex];
+        });
+
+        document.getElementById('replace-facts').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * newFacts.length);
+            document.getElementById('fact-display').innerText = newFacts[randomIndex];
+        });
+    </script>
+</body>
+</html>
