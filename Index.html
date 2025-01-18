@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crocodile Facts Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e2e2e2;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #fact-display {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: white;
+            min-height: 50px; /* Ensures space for the fact display */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Crocodile Facts</h1>
+    <div id="fact-display">Click the button to see a crocodile fact!</div>
+    <button id="generate-fact">Generate Another Fact</button>
+    
+    <script>
+        const facts = [
+            "Crocodiles have existed for over 200 million years, making them one of the oldest living species on Earth.",
+            "Crocodiles are ectothermic (cold-blooded), meaning they rely on external sources to regulate their body temperature.",
+            "They have one of the strongest bites in the animal kingdom, with a bite force of over 3,700 pounds per square inch.",
+            "Crocodiles can swim at speeds of up to 20 miles per hour in short bursts, thanks to their powerful tails.",
+            "Their eyes have a special membrane that allows them to see clearly underwater while keeping their eyes protected.",
+            "Crocodiles communicate through a variety of vocalizations, including hissing, growling, and even bellowing.",
+            "Unlike many reptiles, female crocodiles exhibit parental care, guarding their nests and helping hatchlings reach the water.",
+            "They are carnivorous and primarily feed on fish, birds, and mammals, but they can also consume fruit on occasion.",
+            "Crocodiles are found in tropical and subtropical regions around the world, inhabiting rivers, lakes, and wetlands.",
+            "In the wild, crocodiles can live for 70 to 100 years, with some individuals in captivity living even longer."
+        ];
+
+        document.getElementById('generate-fact').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact-display').innerText = facts[randomIndex];
+        });
+    </script>
+</body>
+</html>
